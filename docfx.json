@@ -1,82 +1,67 @@
 {
+  "metadata": [
+    {
+      "src": [
+        {
+          "files": [
+            "src/**.csproj"
+          ]
+        }
+      ],
+      "dest": "api",
+      "disableGitFeatures": false,
+      "disableDefaultFilter": false
+    }
+  ],
   "build": {
-    "markdownEngineName": "markdig",
     "content": [
       {
         "files": [
-          "**/*.md",
-          "**/*.yml"
-        ],
-        "exclude": [
-          "**/obj/**",
-          "**/includes/**",
-          "**/_themes/**"
-        ],
-        "src": "articles",
-        "dest": "."
+          "api/**.yml",
+          "api/index.md"
+        ]
       },
       {
         "files": [
-          "**/*.md",
-          "**/*.yml"
-        ],
-        "exclude": [
-          "**/obj/**",
-          "**/includes/**",
-          "**/_themes/**"
-        ],
-        "src": "bread",
-        "dest": "bread"
+          "articles/**.md",
+          "articles/**/toc.yml",
+          "toc.yml",
+          "*.md"
+        ]
       }
     ],
     "resource": [
       {
         "files": [
-          "**/*.svg",
-          "**/*.png",
-          "**/*.jpg",
-          "**/*.jpeg",
-          "**/*.gif"
-        ],
-        "exclude": [
-          "**/obj/**",
-          "**/_themes/**"
-        ],
-        "src": "articles",
-        "dest": "."
-      },
-      {
-        "files": [
-          "includes/**/*.svg",
-          "includes/**/*.png",
-          "includes/**/*.jpg",
-          "includes/**/*.jpeg",
-          "includes/**/*.gif"
-        ],
-        "exclude": [
-          "**/obj/**",
-          "**/_themes/**"
-        ],
-        "src": null,
-        "dest": null
+          "images/**"
+        ]
       }
     ],
-    "overwrite": [],
-    "externalReference": [],
-    "globalMetadata": {
-      "feedback_system": "GitHub",
-      "feedback_github_repo": "selerix/benselect-docs",
-      "feedback_product_url": "https://selerix.microsoftcrmportals.com/",
-      "breadcrumb_path": "/benselect/bread/toc.json",
-      "brand": "benselect",
-      "searchScope": [
-        "BenSelect"
-      ],
-      "recommendations": true,
-      "contributors_to_exclude": [
-      ],
-      "_op_documentIdPathDepotMapping": {
+	"globalMetadata": {
+		"_enableSearch" : true
+	},
+    "overwrite": [
+      {
+        "files": [
+          "apidoc/**.md"
+        ],
+        "exclude": [
+          "obj/**",
+          "_site/**"
+        ]
       }
-    }
+    ],
+    "dest": "_site",
+    "globalMetadataFiles": [],
+    "fileMetadataFiles": [],
+    "template": [
+      "default"
+    ],
+    "postProcessors": ["ExtractSearchIndex"],
+    "markdownEngineName": "markdig",
+    "noLangKeyword": false,
+    "keepFileLink": false,
+    "cleanupCacheHistory": false,
+    "disableGitFeatures": false
   }
 }

@@ -12,7 +12,7 @@ The first step in connecting with Selerix Engage is to send a **POST** request t
 
 The Body of the post will need to include the Benefits Pulse **Username** and **Password**:
 
-![authenticate_body](images/authenticate_body.jpg)
+![authenticate_body](images/authenticate_body.JPG)
 
 If the **POST** is successful, the response will send back a status of 200 and also include an access token that allows access for 24 hours. Once the 24 hours is up, this will need to be renewed by sending the **Authentication** request again before any other calls will be accepted: 
 
